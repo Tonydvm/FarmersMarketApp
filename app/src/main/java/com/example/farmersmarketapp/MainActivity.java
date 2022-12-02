@@ -2,6 +2,7 @@ package com.example.farmersmarketapp;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.core.app.ActivityCompat;
 
 import android.Manifest;
@@ -11,6 +12,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -25,22 +27,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         getSupportActionBar().hide();
 
-        // Create a list of items and add them to the list view
-        // TODO: populate the list with more products
-        ListView listView = findViewById(R.id.listView);
-        List<String> arrList = new ArrayList<>();
-        arrList.add("Apples");
-        arrList.add("Bananas");
-        arrList.add("Carrots");
-        arrList.add("Oranges");
-        arrList.add("Pears");
-        arrList.add("Potatoes");
-        arrList.add("Tomatoes");
-
-        // Set the list view to display the items in the list
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(
-                this, android.R.layout.simple_list_item_1, arrList );
-        listView.setAdapter(arrayAdapter);
+        LinearLayout linearLayout3 = (LinearLayout) findViewById(R.id.linearlayout3);
+        linearLayout3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // TODO: Add code to handle the click --- presumably this will go to a chat screen
+                // For now, chat screen can just be a screenshot of the chat screen
+            }
+        });
 
         // request location popup
         Button configButton = findViewById(R.id.button);
